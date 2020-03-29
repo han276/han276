@@ -1,0 +1,46 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace miniosero_c
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        int i;
+        
+        private void Buttons_clicked(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+                i = i + 1;
+                
+
+                int turn = i % 2;
+
+
+                if (btn.Name.Equals("button1") || btn.Name.Equals("button2") || btn.Name.Equals("button3") || btn.Name.Equals("button4") || btn.Name.Equals("button5"))
+                    btn.Enabled = false;
+                if (turn == 1)
+                    btn.BackColor = Color.Black;
+                else
+                    btn.BackColor = Color.White;
+
+                label2.Text = Convert.ToString(i);
+            
+
+        }
+
+      
+    }
+}
